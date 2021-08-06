@@ -17,10 +17,11 @@ jobs:
           dotnet --version
           dotnet --list-sdks
 
-  # second-demo:
-  #   container: node:14.16
-  #   # container:
-  #   #   image: node:14.16
-  #   steps:
-  #     - run: ls
-  #     - run: node --version
+  second-demo:
+    runs-on: ubuntu-latest
+    container: node:14.16
+    # container:
+    #   image: node:14.16
+    steps:
+      - run: ls
+      - run: node --version

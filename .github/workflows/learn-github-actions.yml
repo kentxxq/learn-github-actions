@@ -19,9 +19,10 @@ jobs:
 
   second-demo:
     runs-on: ubuntu-latest
-    container: node:14.16
-    # container:
-    #   image: node:14.16
+    container:
+      image: node:14.16
+      env:
+        NODE_ENV: development
     steps:
       - run: ls
       - run: node --version

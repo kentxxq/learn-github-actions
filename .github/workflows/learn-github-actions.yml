@@ -10,7 +10,7 @@ jobs:
         with:
           dotnet-version: '5.0'
       - run: dotnet --version
-      - run: dotnet --list-sdks
+      # - run: dotnet --list-sdks
 
   # second-demo:
   #   runs-on: ubuntu-latest

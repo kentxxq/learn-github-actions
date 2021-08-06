@@ -18,7 +18,8 @@ jobs:
           dotnet --list-sdks
 
   second-demo:
-    runs-on: ubuntu-latest
+    container:
+      image: node:14.16
     steps:
       - run: ls
-      - run: dotnet --list-sdks
+      - run: node --version

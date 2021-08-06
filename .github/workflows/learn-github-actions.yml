@@ -4,19 +4,21 @@ jobs:
   first-demo:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-dotnet@v1
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: set dotnet core
+        uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '5.0'
-      - run: dotnet --version
-      - run: dotnet --list-sdks
+      
+      - name: commands
+        run: |
+          dotnet --version
+          dotnet --list-sdks
 
   second-demo:
     runs-on: ubuntu-latest
     steps:
-      # - uses: actions/checkout@v2
-      # - uses: actions/setup-dotnet@v1
-        # with:
-        #   dotnet-version: '5.0'
       - run: ls
       - run: dotnet --list-sdks

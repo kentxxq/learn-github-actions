@@ -7,14 +7,14 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
-    - name: setup dotnet
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '6.0.x'
-        include-prerelease: true
+      - name: setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+          include-prerelease: true
 
-    - name: command
-      run: | 
-        dotnet new console --name hello-world
-        dotnet publish -r linux-x64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
-        ll -h bin/Release/net5.0/linux-x64/publish/hello-world
+      - name: command
+        run: | 
+          dotnet new console --name hello-world
+          dotnet publish -r linux-x64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+          ll -h bin/Release/net5.0/linux-x64/publish/hello-world

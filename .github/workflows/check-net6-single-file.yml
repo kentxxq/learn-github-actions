@@ -75,7 +75,7 @@ jobs:
           dotnet new console --name hello-world
           cd hello-world
           dotnet publish -r win-x64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
-          ls bin/Release/net6.0/win-x64/publish/hello-world
+          ls bin\Release\net6.0\win-x64\publish\hello-world
 
   win-arm64-test:
     runs-on: windows-latest
@@ -94,7 +94,7 @@ jobs:
           dotnet new console --name hello-world
           cd hello-world
           dotnet publish -r win-arm64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
-          ls bin/Release/net6.0/win-arm64/publish/hello-world
+          ls bin\Release\net6.0\win-arm64\publish\hello-world
 
 
   macos-x64-test:

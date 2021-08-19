@@ -1,9 +1,14 @@
-steps:
-- uses: actions@checkout@v2
-- uses: actions/setup-dotnet@v1
-  with:
-    dotnet-version: '6.0.x'
-    include-prerelease: true
-- run: dotnet new console --name hello-world
-- run: dotnet publish -r linux-x64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
-- run: ll -h bin/Release/net5.0/linux-x64/publish/hello-world
+name: learn-github-actions
+on: [push]
+jobs:
+  first-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions@checkout@v2
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+        include-prerelease: true
+    - run: dotnet new console --name hello-world
+    - run: dotnet publish -r linux-x64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+    - run: ll -h bin/Release/net5.0/linux-x64/publish/hello-world

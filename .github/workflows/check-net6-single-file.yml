@@ -1,4 +1,4 @@
-name: learn-github-actions
+name: check-net6-single-file
 on: [push]
 jobs:
   first-test:

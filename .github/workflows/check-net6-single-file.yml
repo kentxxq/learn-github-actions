@@ -37,7 +37,7 @@ jobs:
           dotnet new console --name hello-world
           cd hello-world
           dotnet publish -r linux-arm -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
-          ls -lh bin/Release/net6.0/linux-arm/publish/hello-world
+          ls -lh bin/Release/net6.0/linux-arm/publish/hello-world.exe
 
   linux-arm64-test:
     runs-on: ubuntu-latest
@@ -56,7 +56,7 @@ jobs:
           dotnet new console --name hello-world
           cd hello-world
           dotnet publish -r linux-arm64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
-          ls -lh bin/Release/net6.0/linux-arm64/publish/hello-world
+          ls -lh bin/Release/net6.0/linux-arm64/publish/hello-world.exe
 
   win-x64-test:
     runs-on: windows-latest

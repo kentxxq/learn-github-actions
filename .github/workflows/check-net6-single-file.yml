@@ -4,10 +4,7 @@ jobs:
   first-test:
     runs-on: ubuntu-latest
     steps:
-    - name: x1
-      uses: actions@checkout@v2
-
-    - name: x2
+    - uses: actions@checkout@v2
     - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '6.0.x'

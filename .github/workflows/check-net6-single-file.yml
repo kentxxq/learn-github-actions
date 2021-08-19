@@ -1,7 +1,7 @@
 name: check-net6-single-file
 on: [push]
 jobs:
-  first-test:
+  linux-x64-test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -18,4 +18,119 @@ jobs:
           dotnet new console --name hello-world
           cd hello-world
           dotnet publish -r linux-x64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+          ls -lh bin/Release/net6.0/linux-x64/publish/hello-world
+
+  linux-arm-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+          include-prerelease: true
+
+      - name: command
+        run: | 
+          dotnet new console --name hello-world
+          cd hello-world
+          dotnet publish -r linux-arm -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+          ls -lh bin/Release/net6.0/linux-x64/publish/hello-world
+
+  linux-arm64-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+          include-prerelease: true
+
+      - name: command
+        run: | 
+          dotnet new console --name hello-world
+          cd hello-world
+          dotnet publish -r linux-arm64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+          ls -lh bin/Release/net6.0/linux-x64/publish/hello-world
+
+  win-x64-test:
+    runs-on: windows-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+          include-prerelease: true
+
+      - name: command
+        run: | 
+          dotnet new console --name hello-world
+          cd hello-world
+          dotnet publish -r win-x64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+          ls -lh bin/Release/net6.0/linux-x64/publish/hello-world
+
+  win-arm64-test:
+    runs-on: windows-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+          include-prerelease: true
+
+      - name: command
+        run: | 
+          dotnet new console --name hello-world
+          cd hello-world
+          dotnet publish -r win-arm64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+          ls -lh bin/Release/net6.0/linux-x64/publish/hello-world
+
+
+  macos-x64-test:
+    runs-on: macos-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+          include-prerelease: true
+
+      - name: command
+        run: | 
+          dotnet new console --name hello-world
+          cd hello-world
+          dotnet publish -r osx-x64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+          ls -lh bin/Release/net6.0/linux-x64/publish/hello-world
+
+  macos-arm-x64-test:
+    runs-on: macos-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+          include-prerelease: true
+
+      - name: command
+        run: | 
+          dotnet new console --name hello-world
+          cd hello-world
+          dotnet publish -r osx-arm64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
           ls -lh bin/Release/net6.0/linux-x64/publish/hello-world

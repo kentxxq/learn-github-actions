@@ -18,4 +18,4 @@ jobs:
           dotnet new console --name hello-world
           cd hello-world
           dotnet publish -r linux-x64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
-          ll -h bin/Release/net5.0/linux-x64/publish/hello-world
+          ls -lh bin/Release/net6.0/linux-x64/publish/hello-world

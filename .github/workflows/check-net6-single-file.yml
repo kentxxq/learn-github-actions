@@ -19,7 +19,7 @@ jobs:
           cd hello-world
           cat hello-world.csproj
           dotnet publish -r linux-x64 -c Release -p:PublishTrimmed=true -p:PublishAot=true --self-contained
-          ls -lh bin/Release/net6.0/linux-x64/publish/hello-world
+          ls -lh bin/Release/net7.0/linux-x64/publish/hello-world
 
   # win-x64-test:
   #   runs-on: windows-latest

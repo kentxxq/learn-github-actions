@@ -21,6 +21,25 @@ jobs:
           dotnet publish -r linux-x64 -c Release -p:PublishTrimmed=true -p:PublishAot=true --self-contained
           ls -lh bin/Release/net7.0/linux-x64/publish/hello-world
 
+  linux-x64-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+          include-prerelease: true
+
+      - name: command
+        run: | 
+          dotnet new console --name hello-world
+          cd hello-world
+          dotnet publish -r linux-x64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+          ls -lh bin/Release/net6.0/linux-x64/publish/hello-world
+
   # win-x64-test:
   #   runs-on: windows-latest
   #   steps:

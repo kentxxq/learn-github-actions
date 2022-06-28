@@ -17,7 +17,7 @@ jobs:
         run: | 
           dotnet new console --name hello-world
           cd hello-world
-          dotnet publish -r linux-x64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true -p:PublishAot=true --self-contained true
+          dotnet publish -r linux-x64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true -p:PublishAot=true
           ls -lh bin/Release/net6.0/linux-x64/publish/hello-world
 
   # win-x64-test:

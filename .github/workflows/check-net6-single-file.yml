@@ -17,6 +17,7 @@ jobs:
         run: | 
           dotnet new console --name hello-world
           cd hello-world
+          cat hello-world.csproj
           dotnet publish -r linux-x64 -c Release -p:PublishSingleFile=true -p:PublishTrimmed=true -p:PublishAot=true
           ls -lh bin/Release/net6.0/linux-x64/publish/hello-world
 
